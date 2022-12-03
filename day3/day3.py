@@ -8,10 +8,8 @@ def total_prio(filename):
 		
 		first = set(list(first))
 		second = set(list(second))
-		#print(first, second)
-		both = first.intersection(second)
 
-		#print(both)
+		both = first.intersection(second)
 		
 		if in_all:
 			in_all = in_all + list(both)
@@ -43,18 +41,14 @@ def badge_prio(filename):
 		
 		if count == 0:
 			in_all = both
-			print(in_all)
 			count += 1
 		elif count == 2:
 			in_all = in_all.intersection(both)
-			print(list(in_all))
 			score += get_prio(str(list(in_all)[0]))
-			print(score)
 			in_all = set([])
 			count = 0
 		else:
 			in_all = in_all.intersection(both)
-			print(in_all)
 			count += 1
 
 	return score
